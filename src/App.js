@@ -41,7 +41,7 @@ function DrinksForm () {
                                                                                                                                                                                         
       const handleDrinkFormSubmit = (event) => {                                                                                                                                                 
         event.preventDefault();                                                                                                                                                         
-        setDataJSON({ ...dataJSON, [drinkInputName]: 1 }); // Add the 'name' key to the data object                                                                                                      
+        setDataJSON({ ...dataJSON, ["suggested: " + drinkInputName]: 1 }); // Add the 'name' key to the data object                                                                                                      
       };                                                                                                                                                                                
                                                                                                                                                                                         
       const handleDrinkFormChange = (event) => {                                                                                                                                                 
