@@ -41,7 +41,8 @@ function DrinksForm () {
                                                                                                                                                                                         
       const handleDrinkFormSubmit = (event) => {                                                                                                                                                 
         event.preventDefault();                                                                                                                                                         
-        setDataJSON({ ...dataJSON, ["suggested: " + drinkInputName]: 1 }); // Add the 'name' key to the data object                                                                                                      
+        setDataJSON({ ...dataJSON, ["Add: " + drinkInputName]: 1 }); // Add the 'name' key to the data object                                                                                                      
+        setDrinkInputName("")
       };                                                                                                                                                                                
                                                                                                                                                                                         
       const handleDrinkFormChange = (event) => {                                                                                                                                                 
@@ -50,17 +51,19 @@ function DrinksForm () {
                                                                                                                                                                                         
     return (
         <div>
-            {Object.keys(dataJSON).map((key, index) => 
-                <button key={key} onClick={() => pressAButton({key})}>
-                    {key}
-                </button>
-            )}
+            <div class="drink-button-container">
+                {Object.keys(dataJSON).map((key, index) => 
+                    <button key={key} onClick={() => pressAButton({key})}>
+                        {key}
+                    </button>
+                )}
+            </div>
             <form onSubmit={handleDrinkFormSubmit}>
-                <input type="text"
+                <input class="form-text-input" type="text"
                 value={drinkInputName}
                 onChange={handleDrinkFormChange}
-                placeholder="New Drink?"/>
-                <input type="submit" value="Submit" />
+                placeholder="Add Another Drink?"/>
+                <input class="form-submit-button" type="submit" value="Add" />
             </form>
             <p>{JSON.stringify(dataJSON)}</p>
         </div>
