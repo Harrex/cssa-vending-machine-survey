@@ -70,7 +70,7 @@ function DrinksForm () {
                 placeholder="Add Another Drink?"/>
                 <input class="form-submit-button" type="submit" value="Add" />
             </form>
-            <p>{JSON.stringify(dataJSON)}</p>
+            <p>{JSON.stringify(dataJSON, null, 2)}</p>
         </div>
     )
 }
