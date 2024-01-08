@@ -9,9 +9,12 @@ function DrinksForm () {
         if ( dataInStorage ) {
             return (dataInStorage); // Check if this is empty ie. First time user
         } else {
+            // Default Options if there is nothing saved
             return JSON.stringify({
-                "coke": 0,
-                "pepsi": 0
+                "Coke": 0,
+                "Pepsi": 0,
+                "Sprite": 0,
+                "Random": 0
             });
         }
     }
@@ -41,8 +44,10 @@ function DrinksForm () {
                                                                                                                                                                                         
       const handleDrinkFormSubmit = (event) => {                                                                                                                                                 
         event.preventDefault();                                                                                                                                                         
-        setDataJSON({ ...dataJSON, ["Add: " + drinkInputName]: 1 }); // Add the 'name' key to the data object                                                                                                      
-        setDrinkInputName("")
+          if (drinkInputName) {
+            setDataJSON({ ...dataJSON, ["Add: " + drinkInputName]: 1 }); // Add the 'name' key to the data object                                                                                                      
+            setDrinkInputName("")
+          }
       };                                                                                                                                                                                
                                                                                                                                                                                         
       const handleDrinkFormChange = (event) => {                                                                                                                                                 
