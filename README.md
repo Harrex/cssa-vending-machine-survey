@@ -12,3 +12,8 @@ Features:
 It doesn't need to connect to anything else - Everything should run locally on
 some form of tablet (Linux/Android probably).
 - Should prevent any security risks
+
+
+![Picture of the website in action](https://github.com/Harrex/cssa-vending-machine-survey/blob/master/src/screenshot.png)
+
+(The JSON is only revealed on hover)
